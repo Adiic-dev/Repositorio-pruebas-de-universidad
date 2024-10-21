@@ -1,0 +1,34 @@
+<ion-app>
+  <ion-header [translucent]="true">
+    <ion-toolbar color="warning">
+      <ion-buttons slot="start">
+        <ion-menu-button auto-hide="false"></ion-menu-button>
+      </ion-buttons>
+      <img id="img" src="../../assets/icon/caja_vecina_logo.png" alt="caja_vecina_logo">
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let info of datos">
+       <ion-thumbnail>
+        <img [src]="info.strMealThumb" alt="[{info.strMeal}]" />
+       </ion-thumbnail>
+       <ion-label>
+        <h2>{{info.strMeal}}
+        <p>
+          {{info.strArea}}
+        </p>
+       </h2>
+      </ion-label>
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+<ion-footer >
+  <ion-fab vertical="bottom" horizontal="center">
+    <ion-fab-button (click)="cargaDatos()">
+    </ion-fab-button>
+  </ion-fab>
+</ion-footer>
+</ion-app>

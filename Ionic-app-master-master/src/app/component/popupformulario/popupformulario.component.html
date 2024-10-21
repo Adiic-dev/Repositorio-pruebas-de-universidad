@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar" color="warning">
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['../login']"></ion-button>
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <div class="logo-container">
+      <img id="img" class="small-logo" src="../../assets/icon/caja_vecina_logo.png" alt="caja_vecina_logo">
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="popup-container">
+    <div class="popup-circulo">
+      <div *ngIf="tiempo > 0" class="loading-spinner"></div>
+      <ion-icon *ngIf="tiempo <= 0" name="checkmark-circle-outline" id="circulo"></ion-icon>
+    </div>
+    <div class="texto">
+      <p *ngIf="tiempo > 0">Cargando... {{ tiempo }} segundos restantes</p>
+      <p *ngIf="tiempo <= 0">¡Proceso completado!</p>
+    </div>
+  </div>
+</ion-content>

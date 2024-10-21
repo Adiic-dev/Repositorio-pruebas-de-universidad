@@ -1,0 +1,55 @@
+#container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+#mapa{
+  width: 85%;
+  display: block;
+}
+  #img{
+    width: 10%;
+    margin: auto;
+    display: block;
+  }
+  #user{
+ 
+   
+    width:10%;
+    float:right
+  
+  }
+  #button{
+    float:right
+  }
+  .map-container {
+    height: 100%;
+    z-index: 1;
+  }
+  
+  #mapDiv {
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Colores de BancoEstado*/
+  .navbar-expand-lg {
+    background-color: #ffa726;
+  }
+  .navbar-expand-lg .navbar-brand,
+  .navbar-expand-lg .nav-link {
+    color: #ffffff !important;
+  }
+  .offcanvas-header .bi-person-circle {
+    font-size: 1.5rem;
+    margin-left: 1rem; 
+  }
+  .offcanvas-header h5 {
+    margin: 0;
+    margin-left: 2rem;
+  }
+  

@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar" color="warning">
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['../login']"></ion-button>
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <div class="logo-container">
+      <img id="img" class="small-logo" src="../../assets/icon/caja_vecina_logo.png" alt="caja_vecina_logo">
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Nombre del Dueño</ion-label>
+      <ion-input formControlName="nombreDuenio"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="formulario.get('nombreDuenio')?.hasError('minlength') && formulario.get('nombreDuenio')?.touched">
+      El nombre debe tener al menos 3 caracteres.
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Apellido del Dueño</ion-label>
+      <ion-input formControlName="apellidoDuenio"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="formulario.get('apellidoDuenio')?.hasError('minlength') && formulario.get('apellidoDuenio')?.touched">
+      El apellido debe tener al menos 4 caracteres.
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Nombre del Establecimiento</ion-label>
+      <ion-input formControlName="nombreEstablecimiento"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="formulario.get('nombreEstablecimiento')?.hasError('minlength') && formulario.get('nombreEstablecimiento')?.touched">
+      El nombre del establecimiento debe tener al menos 5 caracteres.
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Dirección</ion-label>
+      <ion-input formControlName="direccion"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="formulario.get('direccion')?.hasError('minlength') && formulario.get('direccion')?.touched">
+      La dirección debe tener al menos 10 caracteres.
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Teléfono</ion-label>
+      <ion-input type="tel" formControlName="telefono" pattern="[0-9]*"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="formulario.get('telefono')?.hasError('pattern') && formulario.get('telefono')?.touched">
+      El teléfono solo puede contener números.
+    </ion-text>
+    <ion-text color="danger" *ngIf="formulario.get('telefono')?.hasError('minlength') && formulario.get('telefono')?.touched">
+      El teléfono debe tener exactamente 9 dígitos.
+    </ion-text>
+    <ion-text color="danger" *ngIf="formulario.get('telefono')?.hasError('maxlength') && formulario.get('telefono')?.touched">
+      El teléfono no puede tener más de 9 dígitos.
+    </ion-text>
+
+    <ion-button expand="full" type="submit" [disabled]="!formulario.valid">Enviar</ion-button>
+  </form>
+
+  <ion-card *ngIf="enviado" class="mensaje-exito">
+    <ion-card-content>
+      <div class="circulo">
+        <ion-icon name="checkmark-outline" class="ticket"></ion-icon>
+      </div>
+      <span>Formulario enviado con éxito</span>
+      <ion-button expand="block" (click)="cerrarPopup()">
+        Cerrar ({{ tiempoRestante }}s)
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button (click)="abrirAyuda()" expand="full">
+    <ion-icon name="help-circle"></ion-icon> Ayuda
+  </ion-button>
+
+  <ion-button expand="full" (click)="subirImagen()">Subir Imagen</ion-button>
+  <input type="file" (change)="subirPDF($event)">
+</ion-content>

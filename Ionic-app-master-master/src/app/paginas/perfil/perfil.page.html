@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar" color="warning">
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['../login']"></ion-button>
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <div class="logo-container">
+      <img id="img" class="small-logo" src="../../assets/icon/caja_vecina_logo.png" alt="caja_vecina_logo">
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img *ngIf="profileImage; else defaultIcon" [src]="profileImage" alt="Imagen de perfil">
+        <ng-template #defaultIcon>
+          <ion-icon name="person-circle" size="large"></ion-icon>
+        </ng-template>
+      </ion-avatar>
+      <ion-label>
+        <h2>Nombre de Usuario</h2>
+        <p>Descripción o información adicional</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-list>
+    <ion-item (click)="cambiarFoto()">
+      <ion-avatar slot="start">
+        <img *ngIf="profileImage; else defaultIcon2" [src]="profileImage" alt="Imagen de perfil">
+        <ng-template #defaultIcon2>
+          <ion-icon name="person-circle" size="large"></ion-icon>
+        </ng-template>
+      </ion-avatar>
+      <ion-label>
+        <h2>Tu Foto de Perfil</h2>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="key"></ion-icon>
+      <ion-label>Cambiar contraseña</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="mail"></ion-icon>
+      <ion-label>Actualizar correo electrónico</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

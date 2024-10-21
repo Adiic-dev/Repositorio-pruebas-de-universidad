@@ -1,0 +1,26 @@
+.map-container {
+  height: 100%;
+  z-index: 1;
+}
+
+#mapDiv {
+  height: 100%;
+  width: 100%;
+}
+
+/* Colores de BancoEstado*/
+.navbar-expand-lg {
+  background-color: #ffa726;
+}
+.navbar-expand-lg .navbar-brand,
+.navbar-expand-lg .nav-link {
+  color: #ffffff !important;
+}
+.offcanvas-header .bi-person-circle {
+  font-size: 1.5rem;
+  margin-left: 1rem; /* Espacio entre el título y el ícono */
+}
+.offcanvas-header h5 {
+  margin: 0;
+  margin-left: 2rem;
+}

@@ -1,0 +1,49 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar color="warning">
+      <ion-buttons slot="start">
+        <ion-button [routerLink]="['../login']"></ion-button>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-buttons>
+      <img id="img" src="../../assets/icon/caja_vecina_logo.png" alt="caja_vecina_logo">
+    </ion-toolbar>
+
+  </ion-header>
+
+   <ion-content>
+    <img id="user" src="../../assets/icon/usuario.png" alt="usuario">
+    <p id="parrafos">Inicia Sesión</p>
+    
+   <form [formGroup]="formularioLogin">
+     <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input formControlName ="nombre" min="3" max="15"></ion-input>
+      
+     </ion-item>
+     <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input formControlName ="password" min="3" type="password" max="10"></ion-input>
+      
+     </ion-item>
+     
+   </form>
+     
+   
+    
+
+      <br>
+     <ion-button expand="block" (click)="ingresar()">
+      ingresar
+  </ion-button>
+  
+ </ion-content>
+ <ion-footer>
+    <ion-toolbar color="warning">
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['../registro-auth']">
+          ¿No tienes una cuenta? Registrate aquí
+      </ion-button>
+    </ion-buttons>
+    </ion-toolbar>
+ </ion-footer>
+</ion-app>
